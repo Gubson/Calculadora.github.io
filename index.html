@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Derivadas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <h1>Calculadora de Derivadas</h1>
+
+  <label for="inputFunction">Digite a função:</label>
+  <input type="text" id="inputFunction" placeholder="Ex: 2*x^3 + 3*x^2 - 12*x + 5">
+
+  <button onclick="calculateDerivative()">Calcular Derivada</button>
+
+  <p id="result"></p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
+
+  <script>
+    function calculateDerivative() {
+      // Obtém a função do usuário
+      const inputFunction = document.getElementById('inputFunction').value;
+
+      try {
+        // Calcula a derivada
+        const derivative = math.derivative(inputFunction, 'x');
+
+        // Exibe o resultado
+        document.getElementById('result').innerText = `A derivada é: ${derivative.toString()}`;
+      } catch (error) {
+        // Exibe uma mensagem de erro se a entrada for inválida
+        document.getElementById('result').innerText = 'Erro: Função inválida';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
