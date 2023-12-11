@@ -10,59 +10,64 @@
 
 <body>
 
-  <h1>Calculadora de Derivadas</h1>
-  <p>Preenchimento da Função:<br>  <br>
-    Na página web aberta, você verá um campo de entrada de texto com a etiqueta "Digite a função".
-    Insira a função desejada nesse campo. <br>  <br>
-    Por exemplo: 2*x^3 + 3*x^2 - 12*x + 5.
+  <div class="container">
+    <div class="instructions">
+      <h1>Calculadora de Derivadas</h1>
+      <p>
+        <strong>Preenchimento da Função:</strong><br>
+        Na página web aberta, você verá um campo de entrada de texto com a etiqueta "Digite a função".
+        Insira a função desejada nesse campo. <br>
+        Por exemplo: 2*x^3 + 3*x^2 - 12*x + 5.
+      </p>
 
-    Cálculo da Derivada: <br>  <br>
+      <strong>Cálculo da Derivada:</strong><br>
+      Após inserir a função, escolha o tipo de função no menu suspenso e clique no botão "Calcular Derivada".
+      <br><br>
 
-    Após inserir a função, escolha o tipo de função no menu suspenso e clique no botão "Calcular Derivada".
-    <br>  <br>
-    Explicação dos Elementos da Função:
+      <strong>Explicação dos Elementos da Função:</strong><br>
+      2, 3, -12, 5: Coeficientes numéricos.<br>
+      x: A variável independente.<br>
+      ^: Representa a operação de exponenciação.<br>
+      3, 2: Expoentes que indicam a potência à qual a variável é elevada.<br>
+      *: Representa a operação de multiplicação. <br>
+      /: Representa a operação de divisão <br>
+      exp: representa a função exponencial<br><br>
 
-    2, 3, -12, 5: Coeficientes numéricos.<br>  <br>
-    x: A variável independente.<br>  <br>
-    ^: Representa a operação de exponenciação.<br>  <br>
-    3, 2: Expoentes que indicam a potência à qual a variável é elevada.<br>  <br>
-    *: Representa a operação de multiplicação. <br>  <br>
-    /: Representa a operação de divisão <br>  <br>
-    exp: representa a função exponencial<br>  <br>  <br>
-    sin = Seno <br>
-    cos = Cosseno<br>
-    Csc = cossecante<br>
-    Sec= Secante<br>  <br>
+      <strong>Funções Trigonométricas:</strong><br>
+      sin = Seno <br>
+      cos = Cosseno<br>
+      Csc = cossecante<br>
+      Sec= Secante<br>
+      <br><br>
 
-    
+      <strong>EXEMPLOS TESTE PARA CADA FUNÇÃO:</strong><br>
+      Polinomial: 2*x^3 + 3*x^2 - 12*x + 5 <br>
+      Exponencial: exp(2*x) <br>
+      Trigonométrica: sin(3*x) <br>
+      Logarítmica: log(x) <br>
+      Regra do Produto: (x^2 + 3) * (2*x - 1)  <br>
+      Regra do Quociente: (3*x^2 + 2*x - 1) / (x + 2) <br><br>
+    </div>
 
-    EXEMPLOS TESTE PARA CADA FUNÇÃO<br>  <br>
-  Polinomial: 2*x^3 + 3*x^2 - 12*x + 5 <br>  <br>
-  Exponencial: exp(2*x) <br>  <br>
-  Trigonométrica: sin(3*x) <br>  <br>
-  Logarítmica: log(x) <br>  <br>
-  Regra do Produto: (x^2 + 3) * (2*x - 1)  <br>  <br>
-  Regra do Quociente: (3*x^2 + 2*x - 1) / (x + 2) <br>  <br>
-    
+    <div class="calculator">
+      <label for="inputFunction">Digite a função:</label>
+      <input type="text" id="inputFunction" placeholder="Ex: 2*x^3 + 3*x^2 - 12*x + 5">
 
-  </p>
+      <label for="functionType">Escolha o tipo de função:</label>
+      <select id="functionType">
+        <option value="polynomial">Polinomial</option>
+        <option value="exponential">Exponencial</option>
+        <option value="trigonometric">Trigonométrica</option>
+        <option value="logarithmic">Logarítmica</option>
+        <option value="productRule">Regra do Produto</option>
+        <option value="quotientRule">Regra do Quociente</option>
+      </select>
 
-  <label for="inputFunction">Digite a função:</label>
-  <input type="text" id="inputFunction" placeholder="Ex: 2*x^3 + 3*x^2 - 12*x + 5">
+      <button onclick="calculateDerivative()">Calcular Derivada</button>
 
-  <label for="functionType">Escolha o tipo de função:</label>
-  <select id="functionType">
-    <option value="polynomial">Polinomial</option>
-    <option value="exponential">Exponencial</option>
-    <option value="trigonometric">Trigonométrica</option>
-    <option value="logarithmic">Logarítmica</option>
-    <option value="productRule">Regra do Produto</option>
-    <option value="quotientRule">Regra do Quociente</option>
-  </select>
-
-  <button onclick="calculateDerivative()">Calcular Derivada</button>
-
-  <p id="result"></p>
+      <p id="result"></p>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
 
