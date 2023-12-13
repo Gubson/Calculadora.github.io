@@ -31,13 +31,13 @@ double derivadaLogaritmica(double x) {
 }
 
 // Função para calcular a derivada da regra do produto
-double derivadaProduto(double u(double), double v(double), double x) {
-    return u(x) * v(x) + u(x) * v(x);
+double derivadaRegraProduto(double funcao1(double), double funcao2(double), double x) {
+    return funcao1(x) * funcao2(x) + funcao1(x) * funcao2(x);
 }
 
 // Função para calcular a derivada da regra do quociente
-double derivadaQuociente(double u(double), double v(double), double x) {
-    return (u(x) * v(x) - u(x) * v(x)) / (v(x) * v(x));
+double derivadaRegraQuociente(double funcao1(double), double funcao2(double), double x) {
+    return (funcao1(x) * funcao2(x) - funcao1(x) * funcao2(x)) / (funcao2(x) * funcao2(x));
 }
 
 int main() {
@@ -99,20 +99,20 @@ int main() {
             break;
         }
         case 6: {
-            // Defina as funções u e v para a regra do produto
-            auto u = std::sin;
-            auto v = std::cos;
+            // Defina as funções funcao1 e funcao2 para a regra do produto
+            auto funcao1 = std::sin;
+            auto funcao2 = std::cos;
 
-            double resultado = derivadaProduto(u, v, x);
+            double resultado = derivadaRegraProduto(funcao1, funcao2, x);
             std::cout << "A derivada da regra do produto no ponto " << x << " é: " << resultado << "\n";
             break;
         }
         case 7: {
-            // Defina as funções u e v para a regra do quociente
-            auto u = std::sin;
-            auto v = std::cos;
+            // Defina as funções funcao1 e funcao2 para a regra do quociente
+            auto funcao1 = std::sin;
+            auto funcao2 = std::cos;
 
-            double resultado = derivadaQuociente(u, v, x);
+            double resultado = derivadaRegraQuociente(funcao1, funcao2, x);
             std::cout << "A derivada da regra do quociente no ponto " << x << " é: " << resultado << "\n";
             break;
         }
